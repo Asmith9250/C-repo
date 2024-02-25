@@ -17,7 +17,7 @@ int main ( ) {
 	
 	
 	int status = 0;
-	int atempts = 5*level;
+	int atempts = 4*level;
 	int min = 1;
 	int max = 10*level;
 	int randy = generator.next(min, max);
@@ -30,6 +30,13 @@ int main ( ) {
 			if( guess == randy){
 				status = 1;
 			} else {
+				if(guess >= randy){
+					cout<<"                                "<< guess << " is too high." <<endl;
+				}else{
+					if(guess <= randy){
+						cout<<"                            " <<guess << " is too low. " <<endl;
+					};
+				};
 				atempts= atempts-1;
 			};
 		} else {
